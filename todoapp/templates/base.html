@@ -1,0 +1,73 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="text/html">
+        <title>{% block title %}Туду-дуду{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-
+        wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+        <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-
+        B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="side_bar col">
+                    {% block side_bar %}
+                    {% if user.is_authenticated %}
+                    <div class="profile">
+                        <p>{{ user.first_name }} {{ user.last_name }}</p>
+                        <!-- АВАТАР -->
+                        {% if user.profile.avatar.url != "" %}
+                        <img src="{{ user.profile.avatar.url }}" class="img-thumbnail w-50 p-3">
+                        {% else %}
+                        <!-- //АВАТАР -->
+                        <img src="https://www.jasaco.dk/wp-content/uploads/2019/05/billed_paa_vej.jpg" alt="foto" class="img-thumbnail w-50 p-3">
+                        <p>Фото отсутствует.</p>
+                        {% endif %}
+                        <ul>
+                            <li><a href="{% url "edit" %}">профиль</a></li>
+                            <li><a href="{% url "tasks:create" %}">добавить задачу</a></li>
+                            <li><a href="{% url "tasks:list" %}">задачи</a></li>
+                            <li><a href="{% url "logout" %}">выйти</a></li>
+                        </ul>
+                    </div>
+                    {% endif %}
+                    {% endblock %}
+                </div>
+                <div class="main_content col-8">
+                    {% if messages %}
+                    <div class="row">
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li class="alert alert-{{ message.tags }} alert-dismissable fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+                    <div class="main_content">
+                        {% block main_content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>
