@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Максим Кудаев</title>
+        <link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <div class="card card-body h-100 border-info" id="profile-wrapper">
+                        <img class="img-thumbnail" src="{% static 'images/me.jpeg' %}" alt="Maksim Kudaev">
+                        <hr>
+                        <h4>Привет, меня зовут Максим</h4>
+                        <p>Я люблю программировать, проводить исследования и сотрудничать</p>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="card card-body border-info">
+                        <h4>Моя первая работа в компании "Bytex"</h4>
+                        <hr>
+                        <p>Первый месяц работы был обычным стажером, которого, буквально, закидывали на разные проекты.
+                        Спустя полтора месяца работы я получил основные знания в тестировании и начал изучать автоматизацию
+                        бизнец процессов в Битриксе. Спустя ещё 2 недели я уже сделал прототип процесса отпусков на нашем корпоративном сайте.</p>
+                        <p>Через ещё 1 месяц я закончил над процессом отпусков, за что получил премию и звание "Лучшего тестировщика" декабря.
+                        Затем я автоматизировал другие процессы компании - генерация pdf документам с сотрудниками для подписей, принятие и увольнение на работу.</p>
+                        <p>Спустя ровно год меня перевели в отдел разработки, где я обновил обработчик формы для нашего сайта на php и добавил сторонние сервисы.</p>
+                        <p>Через 3 месяца работы в отделе разработки я уволился.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="card card-body">
+                        <h4>Работы в компании "Qualitika"</h4>
+                        <hr>
+                        <p>Первые две недели в компании я занимался тестированием интернет-магазина. Писал чек-листы, тест-кейсы и выполнял спринты.</p>
+                        <p>Через 2 недели меня перекинули на проект Банка ОТП, где я выполнял различные задачи: 
+                        выполнял тест-кейсы, чек-листы, читал логи, xml, тестировал api, писал авто-тесты для ui используя стек технлолгий - 
+                        java, junit, selenium, maven.</p>
+                        <p>Уволился я спуся 3 месяца работа. Причина тому была, выполнение задач, которым должны были заниматься тех. поддержка, что мне не нравилось. Не решив мою проблему в компании, я уволился.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card card-body h-100">
+                        <h4>Работа в компании "Heads and Hands"</h4>
+                        <hr>
+                        <p>В марте 2020 года я устроился в компанию qa engineer.</p>
+                        <p>Выполнял след. задачи: тестирование веб, веб апи;</p>
+                        <p>Тестирование мобильных приложений при помощи charles, тестирование api в postman, написание авто-тестов на python, selenium, pytest.</p>
+                        <p>Всё бы ничего, но я решил быть прогером, так как уже имелся опыт в программировании около 3 лет.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="card card-body">
+                        <h4>Мои навыки и знания</h4>
+                        <hr>
+                        <p>1. Python 3.x - <span class="badge badge-secondary">8/10</span></p>
+                        <p>2. Django 2.x - <span class="badge badge-secondary">7/10</span></p>
+                        <p>3. Pytest - <span class="badge badge-secondary">8/10</span></p>
+                        <p>4. Unittest - <span class="badge badge-secondary">7/10</span></p>
+                        <p>5. Bottle - <span class="badge badge-secondary">8/10</span></p>
+                        <p>6. Javascript - <span class="badge badge-secondary">6/10</span></p>
+                        <p>7. HTML/CSS - <span class="badge badge-secondary">10/10</span></p>
+                        <p>8. Работа с БД - <span class="badge badge-secondary">8/10</span></p>
+                        <p>9. Django ORM and DRF - <span class="badge badge-secondary">8/10</span></p>
+                        <p>10. Selery - <span class="badge badge-secondary">6/10</span></p>
+                        <p>11. ООП - <span class="badge badge-secondary">9/10</span></p>
+                        <p>12. Java - <span class="badge badge-secondary">7/10</span></p>
+                        <p>13. Желание развиваться в веб-разработке - <span class="badge badge-secondary">100/10</span></p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card card-body h-100">
+                        <h4>Что я изучаю на данный момент</h4>
+                        <hr>
+                        <p>1. React.js - <span class="badge badge-info">Каждые 2 дня</span></p>
+                        <p>2. Vue.js - <span class="badge badge-warning">Пока не приступил</span></p>
+                        <p>3. Flask.js - <span class="badge badge-warning">Пока не приступил</span></p>
+                        <p>4. Навыки в Django - <span class="badge badge-success">Каждый день</span></p>
+                        <p>5. PyQt5 - <span class="badge badge-warning">Пока не приступил</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
