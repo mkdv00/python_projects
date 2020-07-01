@@ -1,0 +1,19 @@
+body {
+    background: url('https://metronom-dance.ru/wp-content/uploads/White-Background.jpg') no-repeat;
+}
+
+ul {
+    list-style: none;
+}
+
+li a {
+    color: green;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
