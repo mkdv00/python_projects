@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Изменить профиль{% endblock %}
+
+{% block main_content %}
+    <div class="main_block">
+        <form action="." method="post" enctype="multipart/form-data" class="profile_form">
+            <h1>Изменить профиль</h1>
+            <p>Используйте форму ниже чтобы что-то поменять в профиле:</p>
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="main_button">Сохранить</button>
+        </form>
+        <a href="{% url "password_change" %}">Сменить пароль</a><br>
+    </div>
+{% endblock %}
