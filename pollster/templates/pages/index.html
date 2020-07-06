@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card text-center">
+  <div class="card-body">
+    <h1>Добро пожаловать в опросник</h1>
+    <a class="btn btn-dark" href="{% url 'polls:index' %}">Просмотр доступных опросов</a>
+  </div>
+  </div>
+{% endblock %}
