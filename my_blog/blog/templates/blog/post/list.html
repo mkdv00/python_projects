@@ -1,0 +1,39 @@
+{% extends "blog/base.html" %}
+
+{% load blog_tags %}
+  
+{% block title %}Мой блог{% endblock %}  
+  
+{% block content %}  
+  <h2 class="text-center"><a href="/">Мой блог</a></h2>
+  {% if tag %}  
+    <h4>Посты с тэгами <span class="badge badge-info">{{ tag.name }}</span></h4>  
+  {% endif %}  
+  {% for post in posts %}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h3>  
+                <a href="{{ post.get_absolute_url }}">  
+                {{ post.title }}</a>  
+            </h3> 
+            <p class="tags">  
+                Тэги:  
+                {% for tag in post.tags.all %}
+                <span class="badge badge-info tag-badge">  
+                    <a href="{% url "blog:post_list_by_tag" tag.slug %}">  
+                    {{ tag.name }}  
+                    </a>
+                </span>  
+                    {% if not forloop.last %}, {% endif %}  
+                {% endfor %}  
+            </p>
+            <p class="date">  
+                Опубликовано {{ post.publish }}. Автор - {{ post.author }}  
+            </p>  
+            {{ post.body|markdown|truncatewords_html:30  }}
+        </div>
+    </div>
+  {% endfor %}
+  {% include "../pagination.html" with page=posts %}
+  {% comment %} {% include "../pagination.html" with page=page_obj %} {% endcomment %}
+{% endblock %}
