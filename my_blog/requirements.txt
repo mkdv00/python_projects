@@ -1,4 +1,4 @@
-Django==2.1.5
+Django==2.2.13
 django-taggit==1.2.0
 Markdown==2.6.11
 pytz==2020.1
