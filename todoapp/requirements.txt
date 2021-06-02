@@ -19,7 +19,7 @@ sentry-sdk==0.7.6
 six==1.15.0
 sqlparse==0.3.1
 Unidecode==1.0.23
-urllib3==1.25.9
+urllib3==1.26.5
 wcwidth==0.2.4
 whitenoise==5.1.0
 
